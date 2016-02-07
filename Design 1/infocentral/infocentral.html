@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Info Central</title>
+    <meta charset=utf-8/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css" />
+    <link href="assests/css/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.js"></script>
+    <script src="assests/js/app.js"></script>
+</head>
+
+<body>
+    <div id="wrap" ng-app="infocentral" ng-controller="infocentralCtrl">
+        <header>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>
+                      <span class="md-headline">Inevito</span>
+                    </h2>
+                    <span flex=""></span>
+                    <md-button href="">Sign Up</md-button>
+                    <md-button href="">Sign In</md-button>
+                </div>
+            </md-toolbar>
+
+        </header>
+        <main>
+            <div layout="column" layout-padding="" style="padding-top:2%">
+                <div layout="row" layout-align="center center" style="color:#106CC8">
+                    <h1 class="md-display-2">Info Central</h1>
+                </div>
+
+                <div layout="row" layout-align="center center">
+                    <md-autocomplete md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.display" placeholder="Enter your search text here" flex-gt-xs="50" flex-xs="90">
+                    </md-autocomplete>
+                </div>
+
+            </div>
+
+        </main>
+        <footer>
+            <div class="menuContainer" style="padding-bottom:2%;">
+                <a ng-href="{{menu.url}}" ng-repeat="menu in menus">
+                    <div ng-class="menu.class">
+                        <img class="menuimage" ng-src="assests/images/{{menu.image}}" />
+                        <span class="menutitle">{{menu.name}}</span>
+                    </div>
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
